@@ -43,11 +43,13 @@ namespace AppWebCrawlingForm
 
         private void CreateChromeObject()
         {
-            _driverService = ChromeDriverService.CreateDefaultService(@"C:\Users\dongy\AppData\Local\SeleniumBasic");
+            //_driverService = ChromeDriverService.CreateDefaultService(@"C:\Users\dongy\AppData\Local\SeleniumBasic");
+            _driverService = ChromeDriverService.CreateDefaultService(@"C:\gitRepos\PublicMySource\WebCrawlings");
             _driverService.HideCommandPromptWindow = true;
 
             _options = new ChromeOptions();
-            _options.AddArgument("disable-gpu");            
+            _options.AddArgument("disable-gpu");
+            _driver = new ChromeDriver(_driverService, _options);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -55,10 +57,10 @@ namespace AppWebCrawlingForm
             string id = txtUserID.Text;
             string pwd = txtPWD.Text;
 
-            _driver = new ChromeDriver(_driverService, _options);
+            
 
             // https://logins.daum.net/accounts/signinform.do?url=https%3A%2F%2Fwww.daum.net%2F
-            _driver.Navigate().GoToUrl(@"https://www.daum.net");         // 사이트 접속 
+            //_driver.Navigate().GoToUrl(@"https://www.daum.net");         // 사이트 접속 
             // _driver.Navigate().GoToUrl(@"https://logins.daum.net/accounts/signinform.do?url=https%3A%2F%2Fwww.daum.net%2F");         // 사이트 접속 
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
@@ -84,6 +86,11 @@ namespace AppWebCrawlingForm
 
             //
             
+        }
+
+        private void btnGoDaum_Click(object sender, EventArgs e)
+        {
+            _driver.Navigate().GoToUrl(@"https://www.daum.net");
         }
     }
 }
