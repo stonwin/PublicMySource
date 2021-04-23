@@ -12,21 +12,24 @@ using System.Windows.Forms;
 
 namespace AppWebCrawlingForm
 {
-    public partial class FrmMain : Form
+    public partial class FrmDaumLogin : Form
     {
 
         private ChromeDriver _driver = null;
-        private ChromeOptions _options = null;
-        private ChromeDriverService _driverService = null;
+        //private ChromeOptions _options = null;
+        //private ChromeDriverService _driverService = null;
 
-        public FrmMain()
+        public FrmDaumLogin()
         {
             InitializeComponent();
 
-
-            CreateChromeObject();
-
+            this.Shown += FrmDaumLogin_Shown;
             this.FormClosing += FrmMain_FormClosing;
+        }
+
+        private void FrmDaumLogin_Shown(object sender, EventArgs e)
+        {
+            CreateChromeObject();
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -37,19 +40,15 @@ namespace AppWebCrawlingForm
                 _driver.Dispose();
             }
 
-            _driverService.Dispose();
-            _options = null;
+            //_driverService.Dispose();
+            //_options = null;
         }
 
         private void CreateChromeObject()
         {
-            //_driverService = ChromeDriverService.CreateDefaultService(@"C:\Users\dongy\AppData\Local\SeleniumBasic");
-            _driverService = ChromeDriverService.CreateDefaultService(@"C:\gitRepos\PublicMySource\WebCrawlings");
-            _driverService.HideCommandPromptWindow = true;
 
-            _options = new ChromeOptions();
-            _options.AddArgument("disable-gpu");
-            _driver = new ChromeDriver(_driverService, _options);
+            _driver = GlobalMethod.CreateChromeObject();
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -62,7 +61,7 @@ namespace AppWebCrawlingForm
             // https://logins.daum.net/accounts/signinform.do?url=https%3A%2F%2Fwww.daum.net%2F
             //_driver.Navigate().GoToUrl(@"https://www.daum.net");         // 사이트 접속 
             // _driver.Navigate().GoToUrl(@"https://logins.daum.net/accounts/signinform.do?url=https%3A%2F%2Fwww.daum.net%2F");         // 사이트 접속 
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            //_driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
             // 로그인 버튼 XPath //*[@id="inner_login"]/a[1]
             var eleDaumLogin = _driver.FindElementByXPath("//*[@id=\"inner_login\"]/a[1]");

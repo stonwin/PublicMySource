@@ -1,7 +1,7 @@
 ﻿
 namespace AppWebCrawlingForm
 {
-    partial class FrmMain
+    partial class FrmDaumLogin
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -30,12 +30,12 @@ namespace AppWebCrawlingForm
         private void InitializeComponent()
         {
             this.gbDaumLogin = new System.Windows.Forms.GroupBox();
+            this.btnGoDaum = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPWD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGoDaum = new System.Windows.Forms.Button();
             this.gbDaumLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,16 @@ namespace AppWebCrawlingForm
             this.gbDaumLogin.TabIndex = 0;
             this.gbDaumLogin.TabStop = false;
             this.gbDaumLogin.Text = "다음 사이트 로그인";
+            // 
+            // btnGoDaum
+            // 
+            this.btnGoDaum.Location = new System.Drawing.Point(60, 20);
+            this.btnGoDaum.Name = "btnGoDaum";
+            this.btnGoDaum.Size = new System.Drawing.Size(137, 49);
+            this.btnGoDaum.TabIndex = 3;
+            this.btnGoDaum.Text = "다음 접속";
+            this.btnGoDaum.UseVisualStyleBackColor = true;
+            this.btnGoDaum.Click += new System.EventHandler(this.btnGoDaum_Click);
             // 
             // btnLogin
             // 
@@ -99,23 +109,14 @@ namespace AppWebCrawlingForm
             this.label1.TabIndex = 0;
             this.label1.Text = "ID: ";
             // 
-            // btnGoDaum
-            // 
-            this.btnGoDaum.Location = new System.Drawing.Point(60, 20);
-            this.btnGoDaum.Name = "btnGoDaum";
-            this.btnGoDaum.Size = new System.Drawing.Size(137, 49);
-            this.btnGoDaum.TabIndex = 3;
-            this.btnGoDaum.Text = "다음 접속";
-            this.btnGoDaum.UseVisualStyleBackColor = true;
-            this.btnGoDaum.Click += new System.EventHandler(this.btnGoDaum_Click);
-            // 
-            // FrmMain
+            // FrmDaumLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 550);
+            this.ClientSize = new System.Drawing.Size(379, 202);
             this.Controls.Add(this.gbDaumLogin);
-            this.Name = "FrmMain";
+            this.Name = "FrmDaumLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "크롤링 폼";
             this.gbDaumLogin.ResumeLayout(false);
             this.gbDaumLogin.PerformLayout();
