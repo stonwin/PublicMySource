@@ -57,7 +57,7 @@ namespace AppWebCrawlingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 291);
+            this.ClientSize = new System.Drawing.Size(633, 349);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDaum);
             this.Name = "MainForm";

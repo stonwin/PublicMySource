@@ -70,15 +70,15 @@ namespace AppWebCrawlingForm
             Thread.Sleep(1000);
 
             // id 입력
-            var eleId = _driver.FindElementByXPath("//*[@id=\"id\"]");
+            var eleId = _driver.FindElementByXPath("//*[@id=\"id_email_2\"]");
             eleId.SendKeys(id);
 
             // 암호 입력
-            var elePwd = _driver.FindElementByXPath("//*[@id=\"inputPwd\"]");
+            var elePwd = _driver.FindElementByXPath("//*[@id=\"id_password_3\"]");  // //*[@id=\"id_password_3\"]
             elePwd.SendKeys(pwd);
 
             // 로그인 버튼 클릭
-            var eleBtnLogin = _driver.FindElementByXPath("//*[@id=\"loginBtn\"]");
+            var eleBtnLogin = _driver.FindElementByXPath("//*[@id=\"login-form\"]/fieldset/div[8]/button[1]");  // //*[@id=\"login-form\"]/fieldset/div[8]/button[1]
             eleBtnLogin.Click();
 
 

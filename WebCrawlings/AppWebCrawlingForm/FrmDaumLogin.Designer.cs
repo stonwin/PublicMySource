@@ -98,7 +98,7 @@ namespace AppWebCrawlingForm
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(137, 21);
             this.txtUserID.TabIndex = 1;
-            this.txtUserID.Text = "stonwin";
+            this.txtUserID.Text = "dongyoul.shin@gmail.com";
             // 
             // label1
             // 

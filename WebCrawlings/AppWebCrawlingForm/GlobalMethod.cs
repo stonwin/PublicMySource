@@ -17,7 +17,7 @@ namespace AppWebCrawlingForm
 
         static GlobalMethod()
         {
-            _driverService = ChromeDriverService.CreateDefaultService(@"C:\gitRepos");
+            _driverService = ChromeDriverService.CreateDefaultService(@"C:\chromedriver_win32");
             _driverService.HideCommandPromptWindow = true;
             Application.ApplicationExit += Application_ApplicationExit;
         }

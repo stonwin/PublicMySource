@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{067D9F7A-4419-477E-AC0C-397631331689}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SiS.Service</RootNamespace>
+    <AssemblyName>SiS.Service.Scraping</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="microsoft.msxml, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scraping\Common\DelegateObjectGroup.cs" />
+    <Compile Include="Scraping\Common\HtmlDocumentParsingManager.cs" />
+    <Compile Include="Scraping\Common\InquiryCompletedEventArgs.cs" />
+    <Compile Include="Scraping\Common\IPropertyContainer.cs" />
+    <Compile Include="Scraping\Common\IScrapingService.cs" />
+    <Compile Include="Scraping\Common\LoginProcessEndEventArgs.cs" />
+    <Compile Include="Scraping\Common\PostingCollectionManager.cs" />
+    <Compile Include="Scraping\Common\PropertyContainerBase.cs" />
+    <Compile Include="Scraping\Common\ScrapingArgumentBase.cs" />
+    <Compile Include="Scraping\Common\ScrapingBlockWorkCompletedEventArgs.cs" />
+    <Compile Include="Scraping\Common\ScrapingException.cs" />
+    <Compile Include="Scraping\Common\ScrapingHelper.cs" />
+    <Compile Include="Scraping\Common\ScrapingItemBase.cs" />
+    <Compile Include="Scraping\Common\ScrapingItemCollection.cs" />
+    <Compile Include="Scraping\Common\ScrapingItemWorkCompletedEventArgs.cs" />
+    <Compile Include="Scraping\Common\ScrapingLauncherManager.cs" />
+    <Compile Include="Scraping\Common\ScrapingLauncherWorkCompletedEventArgs.cs" />
+    <Compile Include="Scraping\Common\ScrapingServiceBase.cs" />
+    <Compile Include="Scraping\Common\StandardScrapingArgument.cs" />
+    <Compile Include="Scraping\Common\StandardScrapingItem.cs" />
+    <Compile Include="Scraping\Common\StandardScrapingService.cs" />
+    <Compile Include="Scraping\Enums\CompletedType.cs" />
+    <Compile Include="Scraping\Enums\HttpRequestMethodType.cs" />
+    <Compile Include="Scraping\Enums\ItemDataWorkType.cs" />
+    <Compile Include="Scraping\Enums\LoginNextProcess.cs" />
+    <Compile Include="Scraping\Enums\LoginType.cs" />
+    <Compile Include="Scraping\Enums\LogLevel.cs" />
+    <Compile Include="Scraping\Enums\RetrieveMonthType.cs" />
+    <Compile Include="Scraping\Enums\ScrapingType.cs" />
+    <Compile Include="Scraping\Log\BeforeLogWritingEventArgs.cs" />
+    <Compile Include="Scraping\Log\DebugViewManager.cs" />
+    <Compile Include="Scraping\Log\FrmContentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scraping\Log\FrmContentsView.designer.cs">
+      <DependentUpon>FrmContentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scraping\Log\FrmScrapingLogViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scraping\Log\FrmScrapingLogViewer.designer.cs">
+      <DependentUpon>FrmScrapingLogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scraping\Log\FrmScrapingSignal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scraping\Log\FrmScrapingSignal.designer.cs">
+      <DependentUpon>FrmScrapingSignal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scraping\Log\LogWriter.cs" />
+    <Compile Include="Scraping\Common\SignalViewManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scraping\Log\FrmContentsView.resx">
+      <DependentUpon>FrmContentsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scraping\Log\FrmScrapingLogViewer.resx">
+      <DependentUpon>FrmScrapingLogViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scraping\Log\FrmScrapingSignal.resx">
+      <DependentUpon>FrmScrapingSignal.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
