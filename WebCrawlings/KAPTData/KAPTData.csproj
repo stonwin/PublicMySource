@@ -44,12 +44,12 @@
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>..\Microsoft.mshtml.dll</HintPath>
+      <HintPath>..\..\RefAssembly\Microsoft.mshtml.dll</HintPath>
     </Reference>
-    <Reference Include="microsoft.msxml, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.MSXML, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RefAssembly\Microsoft.MSXML.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>..\microsoft.msxml.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -84,7 +84,7 @@
       <HintPath>..\..\..\..\..\AssemblyFiles\SiSFramework6.0\SiS.Framework.V6.dll</HintPath>
     </Reference>
     <Reference Include="SiS.Service.Scraping">
-      <HintPath>..\SiS.Service.Scraping.dll</HintPath>
+      <HintPath>..\SiS.Service.Scraping\obj\Debug\SiS.Service.Scraping.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

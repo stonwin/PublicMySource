@@ -83,6 +83,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SiS.Service.Scraping\SiS.Service.Scraping.csproj">
+      <Project>{067d9f7a-4419-477e-ac0c-397631331689}</Project>
+      <Name>SiS.Service.Scraping</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
